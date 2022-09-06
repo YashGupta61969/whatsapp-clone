@@ -1,0 +1,32 @@
+.main{
+    background-image: url('../../../public/background.png');
+    background-position: center;
+    background-size: contain;
+    width: 100rem;
+    position: relative;
+}
+
+
+
+/* Main page input */
+
+.main_input{
+    position: absolute;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background-color: var(--nav);
+    padding: 1rem;
+}
+
+.main_input input{
+    width: 100%;
+    padding: 1rem;
+    background-color: #2A3942;
+    border: none;
+    color: white;
+}
+
+.main_input input:focus{
+    outline: none;
+}

@@ -1,10 +1,28 @@
 body {
-  margin: 0;
   font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen',
     'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue',
     sans-serif;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
+}
+
+*{
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+:root{
+  font-size: 62.5%;
+  --primary:#222E35;
+  --secondary:#111B21;
+  --nav:#202C33;
+  --whatsapp:#25D366;
+  --teal:#075E54;
+}
+
+.App{
+  height: 100vh;
 }
 
 code {
