@@ -1,20 +1,35 @@
-import React from 'react'
+import React, { useContext } from 'react'
 import './main.css'
+import { StateContext } from "../../context/Context";
 import NavbarRight from '../navbar/NavbarRight'
-import MainChat from '../../components/MainChat'
-import MainInput from '../../components/MainInput'
+import MainInput from './MainInput'
+import Sidebar from '../sidebar/Sidebar'
+import MainChat from './MainChat'
 
 export default function Main() {
+  const { chatUser } = useContext(StateContext)
   return (
-    <div className="main">
-      {/* Navbar above the chat rooms */}
-      <NavbarRight />
+    <div className="main_container">
+      <Sidebar />
 
-      {/* Main chat where the users communicate and view messages */}
-      <MainChat />
+      {
+        chatUser.chat  ?
+          <div className="main_room">
 
-      {/* Input where the text messgaes will be writted */}
-      <MainInput/>
+            {/* Navbar above the chat rooms */}
+            <NavbarRight />
+
+            {/* Main chat where the users communicate and view messages */}
+            <MainChat />
+
+            {/* Input where the text messgaes will be writted */}
+            <MainInput />
+
+
+          </div> : <h1>Select a room to Start Conversation</h1>
+      }
+
     </div>
   )
+
 }

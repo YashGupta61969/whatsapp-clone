@@ -23,9 +23,19 @@ body {
 
 .App{
   height: 100vh;
+  background-image: url('../public/background.png');
+    background-position: center;
+    background-size: contain;
+    overflow: hidden;
 }
 
 code {
   font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
     monospace;
+}
+
+.dflex{
+  display: flex;
+  align-items: center;
+  justify-content: center;
 }

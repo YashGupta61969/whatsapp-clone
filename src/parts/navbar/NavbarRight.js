@@ -1,8 +1,10 @@
-import React from 'react'
+import React, {useContext} from 'react'
+import { StateContext } from '../../context/Context';
 import AccountCircleIcon from '@mui/icons-material/AccountCircle';
 
 
 function NavbarRight() {
+  const {chatUser} = useContext(StateContext)
   return (
     // Displays over the Chat rooms on the right
     <div className='navbar_right'>
@@ -11,7 +13,7 @@ function NavbarRight() {
       </div>
 
       <div className="navbar_right_info">
-        <h1>Room/User name</h1>
+        <h1>{chatUser.chat && chatUser.chat.name}</h1>
       </div>
     </div>
   )
