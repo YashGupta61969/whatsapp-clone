@@ -24,6 +24,10 @@ function NavbarLeft() {
         }))
   
       })
+
+      return()=>{
+        unsub();
+      }
     },[])
 
   return (
