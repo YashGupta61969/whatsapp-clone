@@ -1,5 +1,5 @@
 import { collection, onSnapshot, orderBy, query } from 'firebase/firestore'
-import React, { useContext, useEffect, useState } from 'react'
+import React, { useContext, useEffect, useRef, useState } from 'react'
 import { StateContext } from '../../context/Context'
 import { auth, db } from '../../firebase/firebase'
 
@@ -7,7 +7,8 @@ import { auth, db } from '../../firebase/firebase'
 function Chat() {
   const [messages, setMessages] = useState('')
   const {chatUser} = useContext(StateContext)
-  const currentUser = auth.currentUser.uid
+  const currentUser = auth.currentUser.uid;
+  const messageRef = useRef()
   const user2 = chatUser.chat.uid
 
   useEffect(()=>{
@@ -25,9 +26,20 @@ function Chat() {
     
   },[user2])
 
-
-  return (
-    <div className='chat_messages'>
+  useEffect(() => {
+    if (messageRef.current) {
+      messageRef.current.scrollIntoView(
+        {
+          behavior: 'smooth',
+          block: 'end',
+          inline: 'nearest'
+        })
+      }
+    })
+    
+    return (
+      <div className='chat_messages'>
+      <div ref={messageRef}></div>
       {
        messages && messages.map(msg=>(
         <div key={msg.createdAt.nanoseconds} className='chat_message'>
