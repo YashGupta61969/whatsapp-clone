@@ -12,10 +12,11 @@ function SignUp() {
     const [password, setPassword] = useState('')
     const navigate = useNavigate();
 
+    // checks whether the user exists or not
     useEffect(()=>{
       auth.onAuthStateChanged((loggedIn)=>{
         if(loggedIn){
-          navigate('/')
+          navigate('/profile')
         }
       })
     },[])
@@ -24,6 +25,7 @@ function SignUp() {
     const handleSubmit = async(e)=>{
       e.preventDefault();
 
+      // creates a new user
       createUserWithEmailAndPassword(auth, email, password)
       .then((data)=>{
 

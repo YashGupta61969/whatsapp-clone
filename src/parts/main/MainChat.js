@@ -12,7 +12,7 @@ function Chat() {
 
   useEffect(()=>{
     const id = currentUser > user2 ? `${currentUser + user2}` : `${user2 + currentUser}`;
-    const refrenceQuery = query(collection(db, 'messages', id, 'chat'), orderBy('createdAt', 'asc'))
+    const refrenceQuery = query(collection(db, 'messages', id, 'chat'), orderBy('createdAt', 'desc'))
 
     // Displays realtime Messages
     onSnapshot(refrenceQuery, snapshot=>{

@@ -59,6 +59,11 @@
     width: 4.8rem;
 }
 
+.sidebar_user_avatar img{
+    height: 4.8rem;
+    object-fit: contain;
+}
+
 .sidebar_user_info{
     margin-left: 1rem;
     color: rgb(223, 223, 223);

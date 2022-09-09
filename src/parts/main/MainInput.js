@@ -18,13 +18,14 @@ function MainInput() {
         let url = ''
         
         if(image){
+          // creates a image refrence to storage
           const imageRef= ref(storage, `images/${new Date().getTime} - ${image.name}`)
           const snap = await uploadBytes(imageRef, image);
           const imgUrl = await getDownloadURL(ref(storage, snap.ref.fullPath))
           url = imgUrl
         }
-      
-        if(input || image){
+       
+        // send images and texts to other user
           const id = currentUser > user2 ? `${currentUser + user2}` : `${user2 + currentUser}`
           await addDoc(collection(db, 'messages', id, 'chat'),{
             text:input || "",
@@ -35,7 +36,6 @@ function MainInput() {
             })
             setInput('')
             setImage('')
-          }
         }
         
         const handleChangeImg = (e)=>{
@@ -44,7 +44,7 @@ function MainInput() {
 
   return (
     <form className='main_input' spellCheck='false' onSubmit={handleSubmit}>
-      <input type="file" onChange={handleChangeImg} />
+      <input type="file" onChange={handleChangeImg} accept='image/*' />
         <input type="text" value={input} onChange={(e)=>setInput(e.target.value)} placeholder='Type A Message' />
         <button>Send</button>
     </form>

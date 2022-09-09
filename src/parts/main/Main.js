@@ -22,7 +22,7 @@ export default function Main() {
             {/* Main chat where the users communicate and view messages */}
             <MainChat />
 
-            {/* Input where the text messgaes will be writted */}
+            {/* Input where the text messgaes will be written */}
             <MainInput />
 
 

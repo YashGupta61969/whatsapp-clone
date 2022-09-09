@@ -13,7 +13,7 @@ function SidebarChat({data}) {
   return (
     <div className='sidebar_chat' onClick={selectUser}>
       <div className="sidebar_user_avatar">
-            <AccountCircleIcon sx={{color:'white'}}/>
+            { data.chat.avatar ? <img src={data.chat.avatar} alt="" /> : <AccountCircleIcon sx={{color:'white'}}/>}
       </div>
       <div className="sidebar_user_info">
         <h1 className="sidebar_user_name">{data.chat.name}</h1>

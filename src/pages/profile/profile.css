@@ -1,0 +1,71 @@
+.profile_page{
+    height:100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.profile_card{
+    background-color: var(--nav);
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    color: #fff;
+    padding: 3rem 6rem;
+    border-radius: 1rem;
+}
+
+.profile_card input[type="file"]{
+    width: 9rem;
+    position: relative;
+    margin-top: 1rem;
+}
+
+.profile_card input[type="file"]::-webkit-file-upload-button {
+    visibility: hidden;
+}
+.profile_card input[type="file"]::before {
+    content: 'Add Image';
+    display: inline-block;
+    border: 1px solid #999;
+    border-radius: 3px;
+    padding: 5px 8px;
+    outline: none;
+    white-space: nowrap;
+    cursor: pointer;
+    font-weight: 700;
+    font-size: 10pt;
+}
+.profile_card input[type="file"]:hover::before {
+    border-color: black;
+}
+
+.remove_img{
+    background-color: red;
+}
+
+
+.profile_card button{
+    margin-top: 1rem;
+    padding: 8px 2rem;
+    background-color: var(--teal);
+    border: none;
+    color: white;
+    cursor: pointer;
+    font-weight: 600;
+    border-radius: 8px;
+}
+
+.img_container{
+    height: 20rem;
+}
+
+.img_container > .MuiSvgIcon-root{
+    height: 100%;
+}
+
+.img_container img{
+    height: 100%;
+    object-fit: contain;
+}

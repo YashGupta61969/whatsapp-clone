@@ -10,6 +10,8 @@ function Login() {
   const [password, setPassword] = useState('')
   const navigate = useNavigate()
 
+
+  //  log in into the web
   const handleSubmit = (e)=>{
     e.preventDefault()
     signInWithEmailAndPassword(auth, email, password)
@@ -17,6 +19,8 @@ function Login() {
     .catch(err=>alert(err.message))
 }
 
+
+// checks whether the user exists or not
 useEffect(()=>{
   auth.onAuthStateChanged((loggedIn)=>{
     if(loggedIn){
@@ -24,6 +28,7 @@ useEffect(()=>{
     }
   })
 },[])
+
   return (
     <div className='login'>
       <div className="login_card">
